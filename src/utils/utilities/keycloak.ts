@@ -34,8 +34,8 @@ export const initKeycloak = (): Promise<boolean> => {
   // If initPromise is not set, initialize it using keycloakInstance.init.
   if (!initPromise) {
     initPromise = keycloakInstance.init({
-      redirectUri: `${window.location.origin}/login-callback`,
-      onLoad: "login-required", // Check if the user is already authenticated using SSO
+      silentCheckSsoRedirectUri: `${window.location.origin}/silent-check-sso.html`,
+      onLoad: "check-sso", // Check if the user is already authenticated using SSO
       pkceMethod: "S256", // Use PKCE method for security during OAuth flows
     });
   }

@@ -11,7 +11,7 @@ const LoginCallback = () => {
     setTimeout(() => {
       navigate("/dashboard");
     }, 2000);
-  }, []);
+  }, [navigate]);
 
   return (
     <>
